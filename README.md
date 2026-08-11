@@ -13,8 +13,8 @@ Profile
 Delete: remove your own posted items
 # tech
 js html php SQL css
-# setup
-download the repo
+# setup/localy
+copy the project into your XAMPP then htdocs folder(it have to be only there no where else otherwise it is not going to work)
 install XAMPP 
 in XAMPP active apache and my sql
 go to localhost/phpmyadmin creat a databse 
@@ -60,5 +60,23 @@ CREATE TABLE cart_items (
     item_id INT NOT NULL,
     UNIQUE KEY unique_cart_item (user_email, item_id)
 );
+Update cnfg.php with your DB name
+then visit http://localhost/<project name>/welcome.html
+# run
+download the repo and xampp
+THEN open http://localhost/apy/welcome.html
 
-then visit http://localhost/apy/welcome.html
+welcome.html=the welcoming page
+index.php=Home page item grid, filters, post-item form
+acc.php	Login/register page
+login_register.php	Handles login/register form submissions
+logout.php	logout
+profile.php	View own profile 
+cart.php	View items added to cart
+save_item.php	save item, delete, toggle like, add comment, add/remove from cart 
+upload_picture.php	Handles profile picture upload
+cnfg.php	Database connection
+script.js	
+style.css	All styling
+# not  built yet
+No real payment, cart has no checkout flow 
