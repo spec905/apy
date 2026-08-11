@@ -60,7 +60,7 @@ CREATE TABLE cart_items (
     item_id INT NOT NULL,
     UNIQUE KEY unique_cart_item (user_email, item_id)
 );
-Update cnfg.php with your DB name
+Update cnfg.php with your database name (when you open phpmy admin click new if you alrady have another databse sinon the page directly shows then give it a name (the one we will put in cnfg.php $database = "here put the database name"); 
 then visit http://localhost/<project name>/welcome.html
 # run
 download the repo and xampp
