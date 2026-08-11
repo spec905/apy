@@ -1,7 +1,7 @@
 # apy
 
 What is the apy app?
-A local marketplace for handmade crochet/knit creations — browse, post, like, comment, message sellers, and save items to a cart.
+A local marketplace for handmade crochet/knit creations browse, post, like, comment, message sellers, and save items to a cart.
 # features 
 Auth: register/login 
 Item listings: post items with an uploaded photo, category, country, price, description
