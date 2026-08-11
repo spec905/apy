@@ -14,8 +14,8 @@ Delete: remove your own posted items
 # tech
 js html php SQL css
 # setup/localy
-copy the project into your XAMPP then htdocs folder(it have to be only there no where else otherwise it is not going to work)
 install XAMPP 
+open disque local c you will find xampp folder open it then u will find htdocs folder copy the project into it(it have to be only there no where else otherwise it is not going to work)
 in XAMPP active apache and my sql
 go to localhost/phpmyadmin creat a databse 
 CREATE TABLE users (
