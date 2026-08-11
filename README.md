@@ -1,15 +1,64 @@
 # apy
 
 What is the apy app?
+A local marketplace for handmade crochet/knit creations — browse, post, like, comment, message sellers, and save items to a cart.
+# features 
+Auth: register/login 
+Item listings: post items with an uploaded photo, category, country, price, description
+Filters: search by title, category, country, max price
+Likes: like/unlike any item
+Comments: comment on any item
+Cart: add/remove items to a personal cart and with running total
+Profile
+Delete: remove your own posted items
+# tech
+js html php SQL css
+# setup
+download the repo
+install XAMPP 
+in XAMPP active apache and my sql
+go to localhost/phpmyadmin creat a databse 
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    country VARCHAR(255)
+);
 
-apy is an app that helps users buy and sell used goods and view ratings for various types of products.
-The app ensures that users do not waste their money, time, or effort. 
-(It relies on geolocation, so users must select their country and city before getting started.)
-You can also list products you wish to sell. 
-Product searches are based on price, category, and city. The app features five main categories: Home & Garden, Toys, Sports, Electronics & Machinery, and Fashion.
+CREATE TABLE items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    category VARCHAR(100),
+    location VARCHAR(100),
+    image VARCHAR(255),
+    description TEXT,
+    posted_by VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
-tech stack:
-i used html javascript and css ,firebase 
+CREATE TABLE likes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    item_id INT NOT NULL,
+    user_email VARCHAR(255) NOT NULL,
+    UNIQUE KEY unique_like (item_id, user_email)
+);
 
-*** The Motivation: As someone passionate about discovering and trying out new products, I have spent a great deal of money on items that simply weren't worth the cost an experience that wasted both my time and money, leaving me frustrated. While there are apps that offer product reviews, they often lack a local focus. Consequently, whenever I wanted to buy something, "reviews aren't local" or "products aren't available locally"?making it difficult to find the products I wanted pr to choose something . That is why I created this app: to enable you to buy and sell products locally within your own area.
-We often spend money on new items we don't actually need, or let things go to waste when others might genuinely need them. Instead of wasting resources, you can pass these items on to someone else and earn money in the process.
+CREATE TABLE comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    item_id INT NOT NULL,
+    user_email VARCHAR(255) NOT NULL,
+    comment_text TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+CREATE TABLE cart_items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_email VARCHAR(255) NOT NULL,
+    item_id INT NOT NULL,
+    UNIQUE KEY unique_cart_item (user_email, item_id)
+);
+
+then visit http://localhost/apy/welcome.html
